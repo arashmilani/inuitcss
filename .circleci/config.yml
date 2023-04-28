@@ -19,9 +19,9 @@ jobs:
           command: nvm install 8 && nvm alias default 8
       - restore_cache:
           keys:
-          - v1-dep-{{ .Branch }}-
-          - v1-dep-master-
-          - v1-dep-
+            - v1-dep-{{ .Branch }}-
+            - v1-dep-master-
+            - v1-dep-
       - run: npm install
       - run: if [ -z "${NODE_ENV:-}" ]; then export NODE_ENV=test; fi
       - run: export PATH="~/inuitcss/inuitcss/node_modules/.bin:$PATH"
@@ -30,9 +30,7 @@ jobs:
           key: v1-dep-{{ .Branch }}-{{ epoch }}
           paths:
             - ./node_modules
-      - run: npm rebuild node-sass
-      - run: ~/inuitcss/inuitcss/node_modules/.bin/node-sass example.main.scss test/example.main.css --sourcemap=none -E "UTF-8"
-      - run: ~/inuitcss/inuitcss/node_modules/.bin/node-sass example.main.scss -o test/
+      - run: ~/inuitcss/inuitcss/node_modules/.bin/sass example.main.scss test/example.main.css --no-source-map"
       - run: npm test
       - store_test_results:
           path: /tmp/circleci-test-results

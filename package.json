@@ -1,6 +1,6 @@
 {
-  "name": "inuitcss",
-  "version": "6.0.0",
+  "name": "inuitcss-dart",
+  "version": "7.0.3",
   "description": "Extensible, scalable, Sass-based, OOCSS framework for large and long-lasting UI projects.",
   "main": "example.main.scss",
   "scripts": {
@@ -31,13 +31,13 @@
   },
   "homepage": "https://github.com/inuitcss/inuitcss#readme",
   "dependencies": {
-    "sass-mq": "^5.0.0"
+    "sass-mq": "^6.0.0"
   },
   "devDependencies": {
     "glob": "^7.1.3",
     "mocha": "^5.2.0",
-    "node-sass": "^4.9.4",
-    "sass-true": "^4.0.0",
+    "sass": "^1.62.1",
+    "sass-true": "^7.0.0",
     "stylelint": "^9.6.0",
     "stylelint-scss": "^3.3.1"
   }
